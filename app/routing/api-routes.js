@@ -1,18 +1,16 @@
 var friendData 		= require('../data/friends.js');
 var path 			= require('path');
 
-// API GET Requests: ex:localhost:PORT/api/admin JSON of data shown:
-
 var totalDifference = 0;
 
+//API Get Requests: (localhost:PORT/api/admin) JSON of data shown:
 module.exports = function(app){
 	app.get('/api/friends', function(req, res){
 		res.json(friends);
 	});
 
-//API POST When a user submits form data (a JSON object) is pushed to the appropriate Javascript array:
+//API Post Request: User submited form data (JSON) is pushed to the Javascript array:
 	app.post('/api/friends', function(req, res){
-
 		var greatMatch = {
 			name: "",
 			image: "",
@@ -25,12 +23,12 @@ module.exports = function(app){
 
 		var totalDifference = 0;
 
-		//loop through the friends data array of objects to get each friends scores
+		//Loop the friends data array of objects to get each friends scores:
 		for(var i = 0; i < [friends].length-1; i++){
 			console.log(friends[i].name);
 			totalDifference = 0;
 
-			//loop through friends and users scores to find the difference between the two and push that to the totalDifference variable set above
+			//Loop through friends and users scores to find the difference between the two and push that to the totalDifference variable set above
 			for(var j = 0; j < 10; j++){
 				
 			//Calculate the difference between the scores and sum them into the totalDifference:
